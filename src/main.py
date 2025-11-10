@@ -1,5 +1,6 @@
 import machine
 import socket
+import network
 
 
 with open('frontend.html', 'r') as f:
@@ -11,7 +12,10 @@ s = socket.socket()
 s.bind(socket.getaddrinfo('0.0.0.0', 80)[0][-1])
 s.listen(1)
 
-print("Now listening for requests")
+wlan = network.WLAN(network.WLAN.IF_STA)
+ip_address = wlan.ipconfig('addr4')[0]
+
+print(f"Now listening for requests on http://{ip_address}:80/")
 
 while True:
     cl, addr = s.accept()
