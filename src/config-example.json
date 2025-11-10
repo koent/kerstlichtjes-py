@@ -1,0 +1,12 @@
+{
+  "network": {
+    "ip": "",
+    "mask": "",
+    "gateway": "",
+    "dns": ""
+  },
+  "connection": {
+    "ssid": "",
+    "password": ""
+  }
+}
